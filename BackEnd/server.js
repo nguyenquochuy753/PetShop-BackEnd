@@ -4,6 +4,7 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const accountRouter = require('./routes/acconut')
 const accessoryRouter = require('./routes/accessory')
+const petRouter = require('./routes/pet')
 
 dotenv.config()
 const app = express()
@@ -15,6 +16,7 @@ mongoose.connect(process.env.MONGO_CONNECT_URL)
 
 app.use('/v1/account',accountRouter)
 app.use('/v1/accessory',accessoryRouter)
+app.use('/v1/pet',petRouter)
 
 app.listen(8000,()=>{
     console.log('Server is running on port 8000')

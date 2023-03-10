@@ -12,6 +12,14 @@ const accessoryController = {
         } catch (error) {
             res.status(500).json(error)
         }
+    },
+    readAccessorys : async(req,res)=>{
+        try {
+            const accessorys = await accessoryModel.find({})
+            res.status(200).json(accessorys)
+        } catch (error) {
+            res.status(500).json(error)
+        }
     }
 }
 
